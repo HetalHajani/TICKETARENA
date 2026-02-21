@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+/* body {
+  background: #000;
+  color: #fff;
+} */
+
+/* Wrapper */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('/Stadium.png') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay */
+.login-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%);
+  z-index: 0;
+}
+
+/* Card */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+  padding: 32px 28px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+}
+
+/* Logo container */
+.login-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  padding: 12px; /* spacing around the logo */
+
+}
+
+/* Logo image */
+.login-logo img {
+  width: 90px;
+  height: 90px;
+  display: block;
+  border-radius: 12px; /* rounded corners for the image itself */
+  background: transparent; /* faint background behind the image */
+  padding: 8px; /* inner padding so background shows around the logo */
+  filter: drop-shadow(0 4px 12px rgba(79,140,255,0.5));
+}
+
+
+/* Title & Subtitle */
+.login-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+.login-subtitle {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #4f8cff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* Role Toggle */
+.role-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 6px;
+  display: flex;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.role-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.role-btn.active {
+  background: #4f8cff;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(79, 140, 255, 0.6);
+}
+
+.role-btn.active-admin {
+  background: #ff4f4f;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 79, 79, 0.6);
+}
+
+/* Form */
+.login-form {
+  text-align: left;
+}
+
+.login-form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 8px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 14px;
+  transition: all 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #4f8cff;
+  box-shadow: 0 0 12px rgba(79, 140, 255, 0.5);
+}
+
+.input-wrapper input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.input-wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-wrapper svg {
+  color: #4f8cff;
+  margin-right: 12px;
+}
+
+/* Error Text */
+.error-text {
+  font-size: 12px;
+  color: #ff4f4f;
+  margin-top: -8px;
+  margin-bottom: 12px;
+}
+
+/* Submit Button */
+.login-btn {
+  width: 100%;
+  height: 50px;
+  margin-top: 12px;
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(79, 140, 255, 0.3);
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.login-btn:active {
+  transform: scale(0.97);
+}
+
+.btn-admin {
+  background: #ff4f4f !important;
+  box-shadow: 0 10px 25px rgba(255, 79, 79, 0.3) !important;
+}
+
+/* Footer */
+.login-footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.login-footer button {
+  background: none;
+  border: none;
+  color: #4f8cff;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 6px;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
